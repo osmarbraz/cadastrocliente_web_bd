@@ -11,6 +11,7 @@ import dao.ClienteDAO;
 
 public class AlterarCliente extends HttpServlet {
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -28,11 +29,13 @@ public class AlterarCliente extends HttpServlet {
             cliente.setNome(request.getParameter("nome"));
             cliente.setCpf(request.getParameter("cpf"));
             ClienteDAO clientedao = new ClienteDAOMySQL();
+            //Verifica se o cliente foi salvo
             if (clientedao.save(cliente)) {
                 out.println("<p> Cliente alterado com sucesso!");
             } else {
                 out.println("<p> Cliente não alterado!");
             }
+            //Adiciona o link para retorno a listagem
             out.println("<br><br><a href=" + request.getContextPath() + "/FrmClienteListar.jsp>Voltar a lista</a>");
             out.println("</body>");
             out.println("</html>");

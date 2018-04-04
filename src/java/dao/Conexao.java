@@ -6,16 +6,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.DriverManager;
 
-public class Conexao {
-    //Atributos da Classes	
+/**
+ * Classe que realiza a conexão com o banco de dados.
+ * 
+ */
 
+public class Conexao {
+    
+    //Atributos da Classes
     private String Usuario, Senha, Servidor, DataBase;
     private Connection Con;
     private boolean Conectado;
     private ResultSet Dados;
     private int registros;
 
-    //Construtor da Classe
+    /**
+     * Construtor sem argumento da Classe
+     * 
+     */
     public Conexao() {
         setSenha("");
         setUsuario("");
@@ -27,11 +35,18 @@ public class Conexao {
         setRegistros(0);
     }
 
-    public Conexao(String SERV, String DB, String USU, String SENHA) {
-        setSenha(SENHA);
-        setUsuario(USU);
-        setServidor(SERV);
-        setDataBase(DB);
+    /**
+     * Construtor com argumento
+     * @param servidor Endereço do servidor de banco de dados
+     * @param database Banco de dados
+     * @param usuario Usuário do banco de dados
+     * @param senha Senha do usuário
+     */
+    public Conexao(String servidor, String database, String usuario, String senha) {
+        setSenha(senha);
+        setUsuario(usuario);
+        setServidor(servidor);
+        setDataBase(database);
         setConectado(false);
         setCon(null);
         setDados(null);
@@ -104,6 +119,10 @@ public class Conexao {
         return registros;
     }
 
+    /**
+     * Realiza a conexão com o banco de dados.
+     * 
+     */
     public void conectar() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -136,6 +155,9 @@ public class Conexao {
         }
     }
 
+    /**
+     * Fecha a conexão com o banco de dados.
+     */
     public void fecharConexao() {
         try {
             if (getConectado()) {
@@ -147,6 +169,11 @@ public class Conexao {
         }
     }
 
+    /**
+     * Executa um comando em SQL.
+     * 
+     * @param Comando Comando SQL a ser executado no banco de dados.
+     */
     public void expressaoSQL(String Comando) {
         if (getConectado()) {
             try {
@@ -163,7 +190,6 @@ public class Conexao {
                     } else if (Comando.toUpperCase().indexOf("INSERT") != -1) {
                         System.out.println("Dados Inseridos!");
                     }
-
                 }
             } catch (SQLException e) {
                 System.out.println("SQL Inválido! \n Erro: " + e.getMessage());

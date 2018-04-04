@@ -11,6 +11,7 @@ import dao.ClienteDAO;
 
 public class InserirCliente extends HttpServlet {
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -26,11 +27,13 @@ public class InserirCliente extends HttpServlet {
             cliente.setNome(request.getParameter("nome"));
             cliente.setCpf(request.getParameter("cpf"));
             ClienteDAO clientedao = new ClienteDAOMySQL();
+            //Verifica se o cliente foi salvo
             if (clientedao.save(cliente)) {
                 out.println("<p> Cliente inserido com sucesso!");
             } else {
                 out.println("<p> Cliente não inserido!");
             }
+            //Adiciona o link para retorno ao menu principal
             out.println("<br><br><a href=" + request.getContextPath() + "/index.jsp>Voltar ao menu</a>");
             out.println("</body>");
             out.println("</html>");

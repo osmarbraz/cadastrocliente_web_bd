@@ -13,8 +13,8 @@
         <%
             Cliente cliente = null;
             if (request.getParameter("id") != null) {
-                ClienteDAO veiculodao = new ClienteDAOMySQL();
-                cliente = veiculodao.retrieveByPk(Integer.parseInt(request.getParameter("id")));
+                ClienteDAO clientedao = new ClienteDAOMySQL();
+                cliente = clientedao.retrieveByPk(Integer.parseInt(request.getParameter("id")));
         %>
         <form name="FrmCadastroCliente" method="post" action="AlterarCliente">	
             <%
