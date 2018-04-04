@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>InserirCliente</servlet-name>
+        <servlet-class>InserirCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InserirCliente</servlet-name>
+        <url-pattern>/InserirCliente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AlterarCliente</servlet-name>
+        <servlet-class>AlterarCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlterarCliente</servlet-name>
+        <url-pattern>/AlterarCliente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ExcluirCliente</servlet-name>
+        <servlet-class>ExcluirCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExcluirCliente</servlet-name>
+        <url-pattern>/ExcluirCliente</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
