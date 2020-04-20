@@ -8,11 +8,10 @@ import java.sql.DriverManager;
 
 /**
  * Classe que realiza a conexão com o banco de dados.
- * 
+ *
  */
-
 public class Conexao {
-    
+
     //Atributos da Classes
     private String Usuario, Senha, Servidor, DataBase;
     private Connection Con;
@@ -22,7 +21,7 @@ public class Conexao {
 
     /**
      * Construtor sem argumento da Classe
-     * 
+     *
      */
     public Conexao() {
         setSenha("");
@@ -37,6 +36,7 @@ public class Conexao {
 
     /**
      * Construtor com argumento
+     *
      * @param servidor Endereço do servidor de banco de dados
      * @param database Banco de dados
      * @param usuario Usuário do banco de dados
@@ -121,7 +121,7 @@ public class Conexao {
 
     /**
      * Realiza a conexão com o banco de dados.
-     * 
+     *
      */
     public void conectar() {
         try {
@@ -171,7 +171,7 @@ public class Conexao {
 
     /**
      * Executa um comando em SQL.
-     * 
+     *
      * @param Comando Comando SQL a ser executado no banco de dados.
      */
     public void expressaoSQL(String Comando) {

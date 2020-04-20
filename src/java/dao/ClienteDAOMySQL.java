@@ -10,15 +10,15 @@ import modelo.Cliente;
 
 /**
  * Implementação em MySQL para a interface ClientaDAO.
- * 
+ *
  */
 public class ClienteDAOMySQL implements ClienteDAO {
 
     /**
      * Realiza a inserção ou atualização dos dados de cliente.
-     * 
+     *
      * @param cliente Um objeto cliente a ser inserido ou atualizado.
-     * 
+     *
      * @return Verdadeiro ou falso se conseguiu fazer o salvamento.
      */
     @Override
@@ -71,13 +71,13 @@ public class ClienteDAOMySQL implements ClienteDAO {
 
     /**
      * Recupera todos os objetos do banco de dados.
-     * 
+     *
      * @return Uma lista com todos os objetos cliente do banco de dados.
      */
     @Override
     public List retrieveAll() {
         Cliente cliente = null;
-       //Instancia a conexão com o banco de dados
+        //Instancia a conexão com o banco de dados
         Conexao MinhaConexao = new Conexao(DadosBanco.SERVIDOR, DadosBanco.DATABASE, DadosBanco.USUARIO, DadosBanco.SENHA);
         //Abre a conexão
         MinhaConexao.conectar();
@@ -127,14 +127,14 @@ public class ClienteDAOMySQL implements ClienteDAO {
 
     /**
      * Exclui um registro de cliente do banco de dados.
-     * 
+     *
      * @param clienteId Id do cliente a ser excluído.
      * @return Verdadeiro ou falso se conseguiu fazer a exclusão.
      */
     @Override
     public boolean delete(int clienteId) {
         boolean resultado = false;
-      //Instancia a conexão com o banco de dados
+        //Instancia a conexão com o banco de dados
         Conexao MinhaConexao = new Conexao(DadosBanco.SERVIDOR, DadosBanco.DATABASE, DadosBanco.USUARIO, DadosBanco.SENHA);
         //Abre a conexão
         MinhaConexao.conectar();
@@ -170,10 +170,11 @@ public class ClienteDAOMySQL implements ClienteDAO {
 
     /**
      * Recupera um objeto cliente do banco de dados apartir do seu Id.
-     * 
+     *
      * @param clienteId Id do cliente a ser recuperado.
-     * 
-     * @return Um objeto cliente do banco de dados ou null se não encontrar o cliente.
+     *
+     * @return Um objeto cliente do banco de dados ou null se não encontrar o
+     * cliente.
      */
     @Override
     public Cliente retrieveByPk(int clienteId) {

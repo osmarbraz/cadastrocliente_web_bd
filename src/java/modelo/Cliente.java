@@ -41,7 +41,7 @@ public class Cliente {
 
     /**
      * Retorna o id de um cliente.
-     * 
+     *
      * @return Um inteido com o id do cliente.
      */
     public int getClienteId() {
@@ -53,10 +53,10 @@ public class Cliente {
      *
      * @param clienteId Um inteiro com o id de um cliente.
      */
-   public void setClienteId(int clienteId) {
+    public void setClienteId(int clienteId) {
         this.clienteId = clienteId;
     }
-   
+
     /**
      * Modifica o id de um cliente.
      *
@@ -68,7 +68,7 @@ public class Cliente {
 
     /**
      * Retorna o nome de um cliente.
-     * 
+     *
      * @return Uma string com o nome do cliente.
      */
     public String getNome() {
@@ -86,7 +86,7 @@ public class Cliente {
 
     /**
      * Retorna o cpf de um cliente.
-     * 
+     *
      * @return Uma string com o cpf.
      */
     public String getCpf() {
@@ -104,7 +104,7 @@ public class Cliente {
 
     /**
      * Retorna uma string com o estado do objeto.
-     * 
+     *
      * @return Uma string com os dados de cliente concatenados.
      */
     public String paraString() {

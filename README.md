@@ -1,7 +1,7 @@
-# Sistema de Cadastro de Clientes para WEB em Banco de Dados para a IDE NetBeans
- - Est· È uma vers„o do sistema para a IDE NetBeans. O projeto no NetBeans deve ser chamado cadastrocliente_web_bd.<br>
- - Este programa possui diversas classes organizada nos pacotes vis„o, modelo e dao.<br>
- - Toda iteraÁ„o com banco de dados È tratada diretamente pelo DAO(Data Access Object).<br>
- - Os dados de configuraÁ„o(Servidor, Database, Usuario, Senha) da integraÁ„o do java com o banco de dados est„o no arquivo src/dao/DadosBanco.java.<br>
- - Crie o banco de dados no MySQL antes de executar o projeto, as especificaÁıes das tabelas est„o no arquivo banco.sql.<br>
- - A pasta src contÍm os fontes do projeto e na pasta  lib o driver jdbc para MySQL.<br>
+# Sistema de Cadastro de Clientes para WEB em Banco de Dados MySQL para a IDE NetBeans
+ - Est√° √© uma vers√£o do sistema para a IDE NetBeans. O projeto no NetBeans deve ser chamado cadastrocliente_web_bd.<br>
+ - Este programa possui diversas classes organizada nos pacotes vis√£o, modelo e dao.<br>
+ - Toda iter~√ß√£o com banco de dados √© tratada diretamente pelo DAO(Data Access Object).<br>
+ - Os dados de configura√ß√£o(Servidor, Database, Usuario, Senha) da integra√ß√£o do java com o banco de dados est√£o no arquivo src/dao/DadosBanco.java.<br>
+ - Crie o banco de dados no MySQL antes de executar o projeto, as especifica√ß√µes das tabelas est√£o no arquivo banco.sql.<br>
+ - A pasta src cont√™m os fontes do projeto e na pasta  lib o driver jdbc para MySQL.<br>
