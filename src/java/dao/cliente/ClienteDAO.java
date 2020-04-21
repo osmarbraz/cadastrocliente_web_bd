@@ -1,4 +1,4 @@
-package dao;
+package dao.cliente;
 
 import java.util.List;
 import modelo.Cliente;

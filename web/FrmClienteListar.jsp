@@ -1,6 +1,7 @@
 <%@page import="java.util.List"%>
-<%@page import="dao.ClienteDAO"%>
-<%@page import="dao.ClienteDAOMySQL"%>
+<%@page import="dao.DAOFactory"%>
+<%@page import="dao.cliente.ClienteDAO"%>
+<%@page import="dao.cliente.ClienteDAOMySQL"%>
 <%@page import="modelo.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +14,8 @@
         <h1>Listar Clientes</h1>                        
         <table border="1">    
             <td>Id</td> <td>Nome</td><td>CPF</td><td>Editar</td><td>Excluir</td>
-            <% 	ClienteDAO clientedao = new ClienteDAOMySQL();
+            <% 	//Recupero o DAO
+                ClienteDAO clientedao = DAOFactory.getClienteDAO();
                 List<Cliente> clientes = clientedao.retrieveAll();
                 for (Cliente cliente : clientes) {%>                    			
             <tr>

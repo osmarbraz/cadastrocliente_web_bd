@@ -1,5 +1,6 @@
-<%@page import="dao.ClienteDAO"%>
-<%@page import="dao.ClienteDAOMySQL"%>
+<%@page import="dao.DAOFactory"%>
+<%@page import="dao.cliente.ClienteDAO"%>
+<%@page import="dao.cliente.ClienteDAOMySQL"%>
 <%@page import="modelo.Cliente"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +14,8 @@
         <%
             Cliente cliente = null;
             if (request.getParameter("id") != null) {
-                ClienteDAO clientedao = new ClienteDAOMySQL();
+                //Recupero o DAO
+                ClienteDAO clientedao = DAOFactory.getClienteDAO();
                 cliente = clientedao.retrieveByPk(Integer.parseInt(request.getParameter("id")));
         %>
         <form name="FrmCadastroCliente" method="post" action="AlterarCliente">	

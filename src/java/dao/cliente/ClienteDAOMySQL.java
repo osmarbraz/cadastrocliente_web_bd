@@ -1,5 +1,7 @@
-package dao;
+package dao.cliente;
 
+import dao.Conexao;
+import dao.DadosBanco;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

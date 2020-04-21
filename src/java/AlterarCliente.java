@@ -1,13 +1,14 @@
 
+import dao.DAOFactory;
 import modelo.Cliente;
-import dao.ClienteDAOMySQL;
+import dao.cliente.ClienteDAOMySQL;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.ClienteDAO;
+import dao.cliente.ClienteDAO;
 
 public class AlterarCliente extends HttpServlet {
 
@@ -28,7 +29,8 @@ public class AlterarCliente extends HttpServlet {
             cliente.setClienteId(request.getParameter("id"));
             cliente.setNome(request.getParameter("nome"));
             cliente.setCpf(request.getParameter("cpf"));
-            ClienteDAO clientedao = new ClienteDAOMySQL();
+            //Recupero o DAO
+            ClienteDAO clientedao = DAOFactory.getClienteDAO();
             //Verifica se o cliente foi salvo
             if (clientedao.save(cliente)) {
                 out.println("<p> Cliente alterado com sucesso!");

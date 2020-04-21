@@ -1,12 +1,13 @@
 
-import dao.ClienteDAOMySQL;
+import dao.DAOFactory;
+import dao.cliente.ClienteDAOMySQL;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.ClienteDAO;
+import dao.cliente.ClienteDAO;
 
 public class ExcluirCliente extends HttpServlet {
 
@@ -24,8 +25,8 @@ public class ExcluirCliente extends HttpServlet {
             out.println("<h1>Servlet ExcluirClienteo at " + request.getContextPath() + "</h1>");
 
             int id = Integer.parseInt(request.getParameter("id"));
-
-            ClienteDAO clientedao = new ClienteDAOMySQL();
+            //Recupero o DAO
+            ClienteDAO clientedao = DAOFactory.getClienteDAO();
             //Verifica se o cliente foi excluído
             if (clientedao.delete(id)) {
                 out.println("<p>Cliente excluído com sucesso!");
